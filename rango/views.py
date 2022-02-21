@@ -25,8 +25,11 @@ def index(request):
 
 
 def about(request):
-    context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!'}
-    return render(request, 'rango/about.html', context_dict)
+    # prints out whether the method is a GET or a POST
+    print(request.method)
+    # prints out the user name, if no one is logged in it prints `AnonymousUser`
+    print(request.user)
+    return render(request, 'rango/about.html', {})
 
     # return HttpResponse("Rango says here is the about page.  <a href='/rango/'>Index</a>")
 
